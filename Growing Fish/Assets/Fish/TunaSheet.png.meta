@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dc61140d38bc74a47a38ae48aede3d27
+guid: a8914f291e1ec934f95757e294471803
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,127 +129,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet_0
+      name: TunaSheet_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 27
-        width: 76
-        height: 62
+        x: 13
+        y: 35
+        width: 78
+        height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a351abdf2ba22094990001b175497bee
-      internalID: 489554898
+      spriteID: 5842940470e9c7440aeb067e1c50937d
+      internalID: -1736683369
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet_1
+      name: TunaSheet_1
       rect:
         serializedVersion: 2
-        x: 107
-        y: 27
-        width: 74
-        height: 62
+        x: 113
+        y: 35
+        width: 80
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4ee5cfe42d478146b14da0cff9a5c29
-      internalID: 1517408455
+      spriteID: 57f1d0c5b466fc94195863975ff78bf5
+      internalID: 895632498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet_2
+      name: TunaSheet_2
       rect:
         serializedVersion: 2
-        x: 207
-        y: 27
-        width: 73
-        height: 62
+        x: 213
+        y: 35
+        width: 79
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d00d9a2738e268648aa6441cc2d38cb4
-      internalID: -1404982354
+      spriteID: 100c1ba572d87cd4b90bc6a05e0a53af
+      internalID: -663638144
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet_3
+      name: TunaSheet_3
       rect:
         serializedVersion: 2
-        x: 307
-        y: 27
+        x: 313
+        y: 34
+        width: 78
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a71472a1acc64d44e8314ed2cb2e6654
+      internalID: 319969698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TunaSheet_4
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 35
         width: 70
-        height: 62
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 357c47b0be85f384db2a5c570075fe46
-      internalID: -72625571
+      spriteID: a5271d9b3f5ea5b46848dd9576a68966
+      internalID: 842329096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet_4
+      name: TunaSheet_5
       rect:
         serializedVersion: 2
-        x: 407
-        y: 27
-        width: 70
-        height: 62
+        x: 513
+        y: 34
+        width: 78
+        height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d0b8a0ef8a625a4c8baa7b9dca7763a
-      internalID: 1621193059
+      spriteID: 9e0760eae0dc5b946b0fa95278705bab
+      internalID: -279137134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet_5
+      name: TunaSheet_6
       rect:
         serializedVersion: 2
-        x: 507
-        y: 27
-        width: 70
-        height: 62
+        x: 613
+        y: 35
+        width: 79
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9afe270bc769b524093748c9deb61f37
-      internalID: 1791898348
+      spriteID: 369010d01acf57443ba61571657ab1ec
+      internalID: 2001895791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TunaSheet_7
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 35
+        width: 80
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2a9baf3c7cb2f44994c98b4083598de
+      internalID: 1130155525
       vertices: []
       indices: 
       edges: []
@@ -265,12 +307,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Pixilart Sprite Sheet_3: -72625571
-      Pixilart Sprite Sheet_4: 1621193059
-      Pixilart Sprite Sheet_0: 489554898
-      Pixilart Sprite Sheet_5: 1791898348
-      Pixilart Sprite Sheet_1: 1517408455
-      Pixilart Sprite Sheet_2: -1404982354
+      TunaSheet_6: 2001895791
+      TunaSheet_7: 1130155525
+      TunaSheet_3: 319969698
+      TunaSheet_0: -1736683369
+      TunaSheet_2: -663638144
+      TunaSheet_4: 842329096
+      TunaSheet_1: 895632498
+      TunaSheet_5: -279137134
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
