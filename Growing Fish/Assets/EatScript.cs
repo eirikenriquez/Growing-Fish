@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Eat : MonoBehaviour
+public class EatScript : MonoBehaviour
 {
     public SpriteRenderer playerSprite;
 
@@ -27,7 +27,9 @@ public class Eat : MonoBehaviour
             if (CanEat(fishSprite))
             {
                 Debug.Log("eat");
-            } else
+                Eat(collision);
+            } 
+            else
             {
                 Debug.Log("too big :(");
             }
@@ -39,5 +41,10 @@ public class Eat : MonoBehaviour
     private bool CanEat(SpriteRenderer eatenSprite)
     {
         return eatenSprite.bounds.size.x <= playerSprite.bounds.size.x;
+    }
+
+    private void Eat(Collision2D collision)
+    {
+        collision.gameObject.SetActive(false);
     }
 }
