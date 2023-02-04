@@ -155,7 +155,7 @@ TextureImporter:
         serializedVersion: 2
         x: 107
         y: 27
-        width: 74
+        width: 76
         height: 62
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -176,7 +176,7 @@ TextureImporter:
         serializedVersion: 2
         x: 207
         y: 27
-        width: 73
+        width: 76
         height: 62
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -197,7 +197,7 @@ TextureImporter:
         serializedVersion: 2
         x: 307
         y: 27
-        width: 70
+        width: 76
         height: 62
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -218,7 +218,7 @@ TextureImporter:
         serializedVersion: 2
         x: 407
         y: 27
-        width: 70
+        width: 76
         height: 62
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -239,7 +239,7 @@ TextureImporter:
         serializedVersion: 2
         x: 507
         y: 27
-        width: 70
+        width: 76
         height: 62
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -269,6 +269,8 @@ TextureImporter:
       Pixilart Sprite Sheet_4: 1621193059
       Pixilart Sprite Sheet_0: 489554898
       Pixilart Sprite Sheet_5: 1791898348
+      Pixilart Sprite Sheet_7: 630734246
+      Pixilart Sprite Sheet_6: 1069036517
       Pixilart Sprite Sheet_1: 1517408455
       Pixilart Sprite Sheet_2: -1404982354
   spritePackingTag: 
