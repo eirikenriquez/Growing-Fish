@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerInfo : MonoBehaviour
 {
+    public int pointsMultiplier;
+    public int damageMultiplier;
     public int score;
-    public int hp;
+    public int health;
     public float size;
     public SpriteRenderer playerSprite;
 
@@ -14,7 +16,7 @@ public class PlayerInfo : MonoBehaviour
     {
         size = playerSprite.bounds.size.x;
         score = 0;
-        hp = 100;
+        health = 100;
     }
 
     // Update is called once per frame
@@ -25,11 +27,11 @@ public class PlayerInfo : MonoBehaviour
 
     public void UpdateScore(float points)
     {
-        score += (int)(points * 100);
+        score += (int)(points * pointsMultiplier);
     }
 
     public void TakeDamage(float damage)
     {
-        hp -= (int)(damage * 100);
+        health -= (int)(damage * damageMultiplier);
     }
 }

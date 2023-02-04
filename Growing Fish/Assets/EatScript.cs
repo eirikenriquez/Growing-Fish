@@ -7,7 +7,7 @@ public class EatScript : MonoBehaviour
     public PlayerInfo playerInfo;
     public PlayerMovement playerMovement;
     public Rigidbody2D rb;
-    public float hurtMultiplier; // used to calculate knockback damage
+    public float knockbackMultiplier; // used to calculate knockback damage
 
     // Start is called before the first frame update
     void Start()
@@ -57,8 +57,8 @@ public class EatScript : MonoBehaviour
 
     private void Hurt(Collision2D collision)
     {
-        float xForce = -playerMovement.MoveDirection.x * hurtMultiplier;
-        float yForce = -playerMovement.MoveDirection.y * hurtMultiplier;
+        float xForce = -playerMovement.MoveDirection.x * knockbackMultiplier;
+        float yForce = -playerMovement.MoveDirection.y * knockbackMultiplier;
 
         rb.AddForce(new Vector2(xForce, yForce));
     }

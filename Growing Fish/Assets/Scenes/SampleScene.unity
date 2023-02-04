@@ -198,14 +198,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tuna (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 6663375480915668751, guid: 8eaaf624dca5b5048b86d2a2a6d8a809, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6663375480915668751, guid: 8eaaf624dca5b5048b86d2a2a6d8a809, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.46
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8eaaf624dca5b5048b86d2a2a6d8a809, type: 3}
 --- !u!1 &104711945
@@ -634,6 +626,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509b537f045af8840b3845f89de47b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthText: {fileID: 521214721}
+  playerInfo: {fileID: 1174725598}
 --- !u!114 &521214721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,7 +682,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -697,7 +691,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -820,8 +814,8 @@ GameObject:
   - component: {fileID: 1174725595}
   - component: {fileID: 1174725594}
   - component: {fileID: 1174725596}
-  - component: {fileID: 1174725597}
   - component: {fileID: 1174725598}
+  - component: {fileID: 1174725599}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -951,7 +945,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   facingRight: 0
   speed: 5
-  inputX: 0
   rb: {fileID: 1174725594}
 --- !u!114 &1174725596
 MonoBehaviour:
@@ -968,32 +961,7 @@ MonoBehaviour:
   playerInfo: {fileID: 1174725598}
   playerMovement: {fileID: 1174725595}
   rb: {fileID: 1174725594}
---- !u!61 &1174725597
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1174725590}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.76, y: 0.62}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.76, y: 0.62}
-  m_EdgeRadius: 0
+  knockbackMultiplier: 50
 --- !u!114 &1174725598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1006,10 +974,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6bd5b24f90da6f48be782ef7234e970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointsMultiplier: 100
+  damageMultiplier: 25
   score: 0
-  hp: 0
+  health: 0
   size: 0
   playerSprite: {fileID: 1174725591}
+--- !u!70 &1174725599
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174725590}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.76, y: 0.62}
+  m_Direction: 0
 --- !u!1001 &1250759809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1084,14 +1070,6 @@ PrefabInstance:
     - target: {fileID: 1903098892680251231, guid: 8eaaf624dca5b5048b86d2a2a6d8a809, type: 3}
       propertyPath: m_Name
       value: Tuna
-      objectReference: {fileID: 0}
-    - target: {fileID: 6663375480915668751, guid: 8eaaf624dca5b5048b86d2a2a6d8a809, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6663375480915668751, guid: 8eaaf624dca5b5048b86d2a2a6d8a809, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8eaaf624dca5b5048b86d2a2a6d8a809, type: 3}
@@ -1169,14 +1147,6 @@ PrefabInstance:
     - target: {fileID: 1903098892680251231, guid: 8eaaf624dca5b5048b86d2a2a6d8a809, type: 3}
       propertyPath: m_Name
       value: Tuna (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6663375480915668751, guid: 8eaaf624dca5b5048b86d2a2a6d8a809, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6663375480915668751, guid: 8eaaf624dca5b5048b86d2a2a6d8a809, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8eaaf624dca5b5048b86d2a2a6d8a809, type: 3}
@@ -1485,14 +1455,6 @@ PrefabInstance:
     - target: {fileID: 1903098892680251231, guid: 8eaaf624dca5b5048b86d2a2a6d8a809, type: 3}
       propertyPath: m_Name
       value: Tuna (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6663375480915668751, guid: 8eaaf624dca5b5048b86d2a2a6d8a809, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6663375480915668751, guid: 8eaaf624dca5b5048b86d2a2a6d8a809, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8eaaf624dca5b5048b86d2a2a6d8a809, type: 3}
