@@ -5,6 +5,9 @@ using UnityEngine;
 public class EatScript : MonoBehaviour
 {
     public PlayerInfo playerInfo;
+    public PlayerMovement playerMovement;
+    public Rigidbody2D rb;
+    public float hurtMultiplier; // used to calculate knockback damage
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +31,13 @@ public class EatScript : MonoBehaviour
             if (CanEat(fishInstance))
             {
                 Debug.Log("eat");
-                Eat(collision);
+                Eat(fishInstance);
             } 
             else
             {
                 Debug.Log("too big :(");
+                Hurt(collision);
+                playerInfo.TakeDamage(fishInstance.size);
             }
         }
     }
@@ -44,8 +49,17 @@ public class EatScript : MonoBehaviour
         return fish.size <= playerInfo.size;
     }
 
-    private void Eat(Collision2D collision)
+    private void Eat(Fish fish)
     {
-        collision.gameObject.SetActive(false);
+        playerInfo.UpdateScore(fish.size);
+        fish.gameObject.SetActive(false);
+    }
+
+    private void Hurt(Collision2D collision)
+    {
+        float xForce = -playerMovement.MoveDirection.x * hurtMultiplier;
+        float yForce = -playerMovement.MoveDirection.y * hurtMultiplier;
+
+        rb.AddForce(new Vector2(xForce, yForce));
     }
 }

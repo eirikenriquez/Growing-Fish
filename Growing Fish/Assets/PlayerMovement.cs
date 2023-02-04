@@ -6,10 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     public bool facingRight;
     public float speed;
-    public float inputX;
+    private float inputX;
     private float inputY;
     public Rigidbody2D rb;
-    private Vector2 moveDirection;
+    public Vector2 MoveDirection { get; private set; }
     
     // Start is called before the first frame update
     void Start()
@@ -39,12 +39,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void SetMoveDirection()
     {
-        moveDirection = new Vector2(inputX * speed, inputY * speed);
+        MoveDirection = new Vector2(inputX * speed, inputY * speed);
     }
 
     public void MoveFish()
     {
-        rb.AddForce(moveDirection);
+        rb.AddForce(MoveDirection);
     }
 
     // Flip sprite depending on x direction

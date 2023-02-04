@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1903098892680251224}
   - component: {fileID: 1903098892680251225}
-  - component: {fileID: 6663375480915668751}
   - component: {fileID: -7190219739280477872}
   - component: {fileID: 3765752748740598693}
+  - component: {fileID: 2246796359552736430}
   m_Layer: 0
   m_Name: Tuna
   m_TagString: Fish
@@ -87,32 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6663375480915668751
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903098892680251231}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.015116155, y: 0.0816271}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 0.46}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.8004669, y: 0.44977272}
-  m_EdgeRadius: 0
 --- !u!95 &-7190219739280477872
 Animator:
   serializedVersion: 5
@@ -146,3 +120,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1903098892680251225}
+--- !u!70 &2246796359552736430
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903098892680251231}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.011618754, y: -0.018587893}
+  m_Size: {x: 0.7767687, y: 0.2795533}
+  m_Direction: 1
