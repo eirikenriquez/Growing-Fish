@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EatScript : MonoBehaviour
 {
-    public SpriteRenderer playerSprite;
+    public PlayerInfo playerInfo;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +23,9 @@ public class EatScript : MonoBehaviour
         // check if player collided with fish
         if (collision.gameObject.tag == "Fish")
         {
-            SpriteRenderer fishSprite = (SpriteRenderer) collision.gameObject.GetComponent("SpriteRenderer");
-            if (CanEat(fishSprite))
+            Fish fishInstance = (Fish) collision.gameObject.GetComponent("Fish");
+
+            if (CanEat(fishInstance))
             {
                 Debug.Log("eat");
                 Eat(collision);
@@ -38,9 +39,9 @@ public class EatScript : MonoBehaviour
 
     // true if fish is smaller than player
     // false otherwise
-    private bool CanEat(SpriteRenderer eatenSprite)
+    private bool CanEat(Fish fish)
     {
-        return eatenSprite.bounds.size.x <= playerSprite.bounds.size.x;
+        return fish.size <= playerInfo.size;
     }
 
     private void Eat(Collision2D collision)
