@@ -7,6 +7,7 @@ public class EatScript : MonoBehaviour
     public PlayerInfo playerInfo;
     public PlayerMovement playerMovement;
     public Rigidbody2D rb;
+    public AudioSource eatSound;
     public float knockbackMultiplier; // used to calculate knockback damage
 
     // Start is called before the first frame update
@@ -53,6 +54,7 @@ public class EatScript : MonoBehaviour
     {
         playerInfo.AddPoints(fish.Size);
         Destroy(collision.gameObject);
+        eatSound.Play();
     }
 
     private void Hurt(Collision2D collision)
