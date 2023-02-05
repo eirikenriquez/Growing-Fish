@@ -6,8 +6,9 @@ public class PlayerInfo : MonoBehaviour
 {
     public int pointsMultiplier;
     public int damageMultiplier;
-    public int score;
+    public int timeMultiplier;
     public int health;
+    public float score;
     public float size;
     public SpriteRenderer playerSprite;
 
@@ -22,12 +23,17 @@ public class PlayerInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        AddTimePoints();
     }
 
-    public void UpdateScore(float points)
+    public void AddTimePoints()
     {
-        score += (int)(points * pointsMultiplier);
+        score += Time.deltaTime * timeMultiplier;
+    }
+
+    public void AddPoints(float points)
+    {
+        score += points * pointsMultiplier;
     }
 
     public void TakeDamage(float damage)

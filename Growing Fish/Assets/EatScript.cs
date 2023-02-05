@@ -31,13 +31,13 @@ public class EatScript : MonoBehaviour
             if (CanEat(fishInstance))
             {
                 Debug.Log("eat");
-                Eat(fishInstance);
+                Eat(fishInstance, collision);
             } 
             else
             {
                 Debug.Log("too big :(");
                 Hurt(collision);
-                playerInfo.TakeDamage(fishInstance.size);
+                playerInfo.TakeDamage(fishInstance.Size);
             }
         }
     }
@@ -46,13 +46,13 @@ public class EatScript : MonoBehaviour
     // false otherwise
     private bool CanEat(Fish fish)
     {
-        return fish.size <= playerInfo.size;
+        return fish.Size <= playerInfo.size;
     }
 
-    private void Eat(Fish fish)
+    private void Eat(Fish fish, Collision2D collision)
     {
-        playerInfo.UpdateScore(fish.size);
-        fish.gameObject.SetActive(false);
+        playerInfo.AddPoints(fish.Size);
+        Destroy(collision.gameObject);
     }
 
     private void Hurt(Collision2D collision)
