@@ -13,11 +13,14 @@ public class FishSpawn : MonoBehaviour
     public int maxFishes;
     public GameObject tuna;
     public PlayerInfo playerInfo;
+    private List<Vector2> existingPositions;
+    private List<float> existingSizes;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        existingPositions = new List<Vector2>();
+        existingSizes = new List<float>();
     }
 
     // Update is called once per frame
@@ -31,13 +34,24 @@ public class FishSpawn : MonoBehaviour
 
     private void SpawnAFish()
     {
-        do
+        GeneratePosition();
+
+        while (existingPositions.Contains(FishPosition) || Vector2.Distance(FishPosition, playerInfo.transform.localPosition) < minDistance)
         {
             GeneratePosition();
-        } while (Vector2.Distance(FishPosition, playerInfo.transform.localPosition) < minDistance);
+        }
+
+        GenerateSize();
+
+        while (existingSizes.Contains(tuna.transform.localScale.x))
+        {
+            GenerateSize();
+        }
+
+        existingPositions.Add(FishPosition);
+        existingSizes.Add(tuna.transform.localScale.x);
 
         Instantiate(tuna, FishPosition, Quaternion.identity);
-        GenerateSize();
         FishCount++;
     }
 
@@ -56,3 +70,4 @@ public class FishSpawn : MonoBehaviour
         tuna.transform.localScale = scaleVector;
     }
 }
+
