@@ -9,7 +9,7 @@ public class FishSpawn : MonoBehaviour
     public int maxDistance;
     public float minFishSize;
     public float maxFishSize;
-    public int FishCount { get; private set; }
+    public int fishCount;
     public int maxFishes;
     public GameObject tuna;
     public PlayerInfo playerInfo;
@@ -26,7 +26,7 @@ public class FishSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (FishCount < maxFishes)
+        if (fishCount < maxFishes)
         {
             SpawnAFish();
         }
@@ -52,7 +52,7 @@ public class FishSpawn : MonoBehaviour
         existingSizes.Add(tuna.transform.localScale.x);
 
         Instantiate(tuna, FishPosition, Quaternion.identity);
-        FishCount++;
+        fishCount++;
     }
 
     private void GeneratePosition()
