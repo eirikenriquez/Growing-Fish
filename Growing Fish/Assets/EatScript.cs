@@ -54,9 +54,8 @@ public class EatScript : MonoBehaviour
     private void Eat(Fish fish, Collision2D collision)
     {
         playerInfo.AddPoints(fish.Size);
-        Destroy(collision.gameObject);
         eatSound.Play();
-        fishSpawn.fishCount--;
+        fishSpawn.RemoveFish(collision.gameObject);
     }
 
     private void Hurt(Collision2D collision)
