@@ -28,6 +28,7 @@ public class Parallax : MonoBehaviour
         offset += (Time.deltaTime * scrollSpeed);
         mat.SetTextureOffset("_MainTex", new Vector2(offset, 0));
 
+        /*
         // Constrain the character's movement
         Vector3 playerPosition = Player.transform.position;
         playerPosition.x = Mathf.Clamp(playerPosition.x, rightBound, leftBound);
@@ -37,5 +38,6 @@ public class Parallax : MonoBehaviour
         Vector3 cameraPosition = Camera.transform.position;
         cameraPosition.x = Mathf.Clamp(playerPosition.x * parallaxFactor, rightBound, leftBound);
         Camera.transform.position = cameraPosition;
+        */
     }
 }
