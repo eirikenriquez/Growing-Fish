@@ -34,19 +34,17 @@ public class FishSpawn : MonoBehaviour
 
     private void SpawnAFish()
     {
-        GeneratePosition();
-
-        while (existingPositions.Contains(FishPosition) || Vector2.Distance(FishPosition, playerInfo.transform.localPosition) < minDistance)
+        do
         {
             GeneratePosition();
         }
+        while (existingPositions.Contains(FishPosition) || Vector2.Distance(FishPosition, playerInfo.transform.localPosition) < minDistance);
 
-        GenerateSize();
-
-        while (existingSizes.Contains(tuna.transform.localScale.x))
+        do
         {
             GenerateSize();
         }
+        while (existingSizes.Contains(tuna.transform.localScale.x)) ;
 
         existingPositions.Add(FishPosition);
         existingSizes.Add(tuna.transform.localScale.x);
