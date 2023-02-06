@@ -12,8 +12,8 @@ public class Parallax : MonoBehaviour
     private float leftBound;
     private float rightBound;
 
-    public GameObject Player;
-    public GameObject Camera;
+    //public GameObject Player;
+    //public GameObject Camera;
 
     void Start()
     {
@@ -23,21 +23,21 @@ public class Parallax : MonoBehaviour
         rightBound = -leftBound;
     }
 
+    /*void Update()
+    {
+        offset += (Time.deltaTime * scrollSpeed);
+        //mat.SetTextureOffset("_MainTex", new Vector2(offset, 0));
+
+    }*/
+
     void Update()
     {
         offset += (Time.deltaTime * scrollSpeed);
-        mat.SetTextureOffset("_MainTex", new Vector2(offset, 0));
-
-        /*
-        // Constrain the character's movement
-        Vector3 playerPosition = Player.transform.position;
-        playerPosition.x = Mathf.Clamp(playerPosition.x, rightBound, leftBound);
-        Player.transform.position = playerPosition;
-
-        // Move the camera based on the player's position and the parallax factor
-        Vector3 cameraPosition = Camera.transform.position;
-        cameraPosition.x = Mathf.Clamp(playerPosition.x * parallaxFactor, rightBound, leftBound);
-        Camera.transform.position = cameraPosition;
-        */
+        if (offset > leftBound)
+        {
+            offset = rightBound;
+        }
+        //mat.SetTextureOffset("_MainTex", new Vector2(offset, 0));
     }
+
 }
