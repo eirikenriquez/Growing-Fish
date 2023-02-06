@@ -8,13 +8,13 @@ public class EatScript : MonoBehaviour
     public PlayerMovement playerMovement;
     public Rigidbody2D rb;
     public AudioSource eatSound;
-    public FishSpawn fishSpawn;
+    private FishSpawn fishSpawn;
     public float knockbackMultiplier; // used to calculate knockback damage
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        fishSpawn = GameObject.Find("Fishes").GetComponent<FishSpawn>();
     }
 
     // Update is called once per frame
