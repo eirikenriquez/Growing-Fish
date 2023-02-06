@@ -174,12 +174,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20703810}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.13, y: 5.01, z: -0.19902611}
+  m_LocalPosition: {x: -14.07, y: 6.4100003, z: 10}
   m_LocalScale: {x: 58.20542, y: 12.021292, z: 6.726056}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &40850783
 GameObject:
@@ -766,6 +766,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 20703812}
   - {fileID: 1651316724}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -999,7 +1000,7 @@ Transform:
   - {fileID: 1701875395}
   - {fileID: 1173588055}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &720355634
 GameObject:
@@ -1564,7 +1565,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1181480497348993159, guid: 9fe06ba0cd3511a40a8cd946b34c4c2c, type: 3}
   boxColliderObject: {fileID: 20703810}
-  numberOfBombs: 15
+  numberOfBombs: 0
+  maxBombs: 15
 --- !u!1 &1604645873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,12 +1762,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651316723}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.002398069, y: -0.13124049, z: 10}
+  m_LocalPosition: {x: 0.0023980737, y: -0.13124049, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 519420032}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1651316726
 MonoBehaviour:
@@ -1784,9 +1786,9 @@ MonoBehaviour:
     m_Extent: {x: 0, y: 0, z: 0}
   minDistance: 5
   minFishSize: 0.2
-  maxFishSize: 1
+  maxFishSize: 2
   fishCount: 0
-  maxFishes: 5
+  maxFishes: 50
   tuna: {fileID: 1903098892680251231, guid: 8eaaf624dca5b5048b86d2a2a6d8a809, type: 3}
   background: {fileID: 1651316727}
   playerInfo: {fileID: 1174725598}
@@ -2457,7 +2459,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6557465010691113200, guid: af9988cf3710f5f4faabc36dfcaf3760, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6557465010691113200, guid: af9988cf3710f5f4faabc36dfcaf3760, type: 3}
       propertyPath: m_LocalPosition.x
