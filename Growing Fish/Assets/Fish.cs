@@ -14,7 +14,7 @@ public abstract class Fish : MonoBehaviour
     public float maxDistanceToAct;
     public float speed;
     private Vector2 currentDirection;
-    private Vector2 currentPosition;
+    public Vector2 CurrentPosition { get; private set; }
     private Vector2 lastPosition;
 
     // Start is called before the first frame update
@@ -36,20 +36,20 @@ public abstract class Fish : MonoBehaviour
 
     void FixedUpdate()
     {
-        currentPosition = transform.position;
+        CurrentPosition = transform.position;
 
-        if (currentPosition != lastPosition)
+        if (CurrentPosition != lastPosition)
         {
             UpdateDirection();
             FlipSprite();
         }
 
-        lastPosition = currentPosition;
+        lastPosition = CurrentPosition;
     }
 
     private void UpdateDirection()
     {
-        currentDirection = (currentPosition - lastPosition).normalized;
+        currentDirection = (CurrentPosition - lastPosition).normalized;
     }
 
     public void FlipSprite()
@@ -63,6 +63,7 @@ public abstract class Fish : MonoBehaviour
 
     public void Eaten()
     {
+        Debug.Log("Eaten");
         fishSpawn.RemoveFish(gameObject);
     }
 

@@ -85,8 +85,9 @@ public class FishSpawn : MonoBehaviour
     {
         for (int i = 0; i < existingFish.Count; i++)
         {
-            if (!spawnBoundaries.Contains(existingFish[i].transform.position))
+            if (!spawnBoundaries.Contains(existingFish[i].GetComponent<Fish>().CurrentPosition))
             {
+                Debug.Log("ResetFishPosition");
                 RemoveFish(existingFish[i]);
                 i--;
             }
@@ -95,6 +96,8 @@ public class FishSpawn : MonoBehaviour
 
     public void RemoveFish(GameObject toRemove)
     {
+        Debug.Log("RemoveFish");
+
         Destroy(toRemove);
         existingSizes.Remove(toRemove.transform.localScale.x);
         existingFish.Remove(toRemove);
