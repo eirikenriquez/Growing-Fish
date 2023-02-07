@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1903098892680251224}
   - component: {fileID: 1903098892680251225}
   - component: {fileID: -7190219739280477872}
-  - component: {fileID: 3765752748740598693}
   - component: {fileID: 2246796359552736430}
   - component: {fileID: 7411289863461052349}
+  - component: {fileID: 7071901663814504522}
   m_Layer: 0
   m_Name: Tuna
   m_TagString: Fish
@@ -108,19 +108,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &3765752748740598693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903098892680251231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3713d77032c018a40a80443bcfb6f9ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 1903098892680251225}
 --- !u!70 &2246796359552736430
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -158,3 +145,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7071901663814504522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903098892680251231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ae3f8398c84114380ecb47397ffcc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1903098892680251225}
+  fishSpawn: {fileID: 0}

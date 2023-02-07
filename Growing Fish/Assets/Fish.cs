@@ -1,22 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fish : MonoBehaviour
+public abstract class Fish : MonoBehaviour
 {
     // Fish properties
     public float Size { get; private set; }
-    public SpriteRenderer spriteRenderer;
+    public FishSpawn fishSpawn;
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
-        Size = spriteRenderer.bounds.size.x;
+        Size = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void Eaten()
+    {
+        fishSpawn.RemoveFish(gameObject);
     }
 }
