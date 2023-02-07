@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -55,7 +56,13 @@ public class EatScript : MonoBehaviour
         playerInfo.AddPoints(fish.Size);
         eatSound.Play();
         fish.Eaten();
+        Grow(fish.Size);
         //collision.gameObject.GetComponent<Fish>().Eaten();
+    }
+
+    private void Grow(float amount)
+    {
+        playerInfo.IncreaseSize(amount);
     }
 
     private void Hurt(Collision2D collision)

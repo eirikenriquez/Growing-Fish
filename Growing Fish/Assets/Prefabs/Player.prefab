@@ -180,6 +180,7 @@ MonoBehaviour:
   pointsMultiplier: 100
   damageMultiplier: 25
   timeMultiplier: 10
+  growMultiplier: 0.1
   health: 0
   score: 0
   size: 0
