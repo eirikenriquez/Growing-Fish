@@ -15,14 +15,12 @@ public class FishSpawn : MonoBehaviour
     public GameObject fish;
     public BoxCollider2D background;
     public PlayerInfo playerInfo;
-    private List<Vector2> existingPositions;
     private List<float> existingSizes;
     private List<GameObject> existingFish;
 
     // Start is called before the first frame update
     void Start()
     {
-        existingPositions = new List<Vector2>();
         existingSizes = new List<float>();
         existingFish = new List<GameObject>();
     }
@@ -51,7 +49,7 @@ public class FishSpawn : MonoBehaviour
         {
             GeneratePosition();
         }
-        while (existingPositions.Contains(FishPosition) || Vector2.Distance(FishPosition, playerInfo.transform.localPosition) < minDistance);
+        while (Vector2.Distance(FishPosition, playerInfo.transform.localPosition) < minDistance);
 
         do
         {
@@ -59,7 +57,6 @@ public class FishSpawn : MonoBehaviour
         }
         while (existingSizes.Contains(fish.transform.localScale.x)) ;
 
-        existingPositions.Add(FishPosition);
         existingSizes.Add(fish.transform.localScale.x);
 
         GameObject fishInstance = Instantiate(fish, FishPosition, Quaternion.identity);
@@ -99,7 +96,6 @@ public class FishSpawn : MonoBehaviour
     public void RemoveFish(GameObject toRemove)
     {
         Destroy(toRemove);
-        existingPositions.Remove(toRemove.transform.position);
         existingSizes.Remove(toRemove.transform.localScale.x);
         existingFish.Remove(toRemove);
         fishCount--;
