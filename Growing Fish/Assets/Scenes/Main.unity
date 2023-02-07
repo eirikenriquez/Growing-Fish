@@ -2701,7 +2701,7 @@ GameObject:
   - component: {fileID: 1942965442}
   - component: {fileID: 1942965441}
   m_Layer: 0
-  m_Name: JellyFish
+  m_Name: JellyFishSpawn
   m_TagString: FishSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

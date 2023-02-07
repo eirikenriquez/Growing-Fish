@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3276315758606000349}
   - component: {fileID: 3276315758606000418}
   - component: {fileID: 3276315758606000419}
-  - component: {fileID: 8302351081202248635}
+  - component: {fileID: 885318649161895294}
   m_Layer: 0
   m_Name: jellyfish_Prefab
   m_TagString: Untagged
@@ -106,7 +106,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &8302351081202248635
+--- !u!114 &885318649161895294
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,7 +115,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3276315758606000416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3713d77032c018a40a80443bcfb6f9ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 4413f1f28f536f54fa61109d35b23363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 3276315758606000418}
