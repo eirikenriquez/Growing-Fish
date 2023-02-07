@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerInfo : MonoBehaviour
 {
-    public int pointsMultiplier;
-    public int damageMultiplier;
-    public int timeMultiplier;
+    public float pointsMultiplier;
+    public float damageMultiplier;
+    public float timeMultiplier;
+    public float growMultiplier;
     public int health;
     public float score;
     public float size;
@@ -39,5 +40,11 @@ public class PlayerInfo : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= (int)(damage * damageMultiplier);
+    }
+
+    public void IncreaseSize(float amount)
+    {
+        gameObject.transform.localScale *= (amount * growMultiplier / size) + 1;
+        size = playerSprite.bounds.size.x;
     }
 }
