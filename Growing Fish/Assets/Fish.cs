@@ -56,7 +56,7 @@ public abstract class Fish : MonoBehaviour
     {
         if ((currentDirection.x < 0 && facingRight) || (currentDirection.x > 0 && !facingRight))
         {
-            gameObject.transform.Rotate(new Vector2(0, 180));
+            gameObject.transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
             facingRight = !facingRight;
         }
     }
