@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,13 +9,12 @@ public class EatScript : MonoBehaviour
     public PlayerMovement playerMovement;
     public Rigidbody2D rb;
     public AudioSource eatSound;
-    private FishSpawn fishSpawn;
     public float knockbackMultiplier; // used to calculate knockback damage
 
     // Start is called before the first frame update
     void Start()
     {
-        fishSpawn = GameObject.Find("Fishes").GetComponent<FishSpawn>();
+
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class EatScript : MonoBehaviour
         // check if player collided with fish
         if (collision.gameObject.tag == "Fish")
         {
-            Fish fishInstance = (Fish) collision.gameObject.GetComponent("Fish");
+            Fish fishInstance = (Fish)collision.gameObject.GetComponent("Fish");
 
             if (CanEat(fishInstance))
             {
@@ -55,7 +55,14 @@ public class EatScript : MonoBehaviour
     {
         playerInfo.AddPoints(fish.Size);
         eatSound.Play();
-        fishSpawn.RemoveFish(collision.gameObject);
+        fish.Eaten();
+        Grow(fish.Size);
+        //collision.gameObject.GetComponent<Fish>().Eaten();
+    }
+
+    private void Grow(float amount)
+    {
+        playerInfo.IncreaseSize(amount);
     }
 
     private void Hurt(Collision2D collision)
