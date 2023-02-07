@@ -79,7 +79,7 @@ public class FishSpawn : MonoBehaviour
     private void GenerateSize()
     {
         float size = Random.Range(minFishSize, maxFishSize);
-        Vector3 scaleVector = new Vector3(size, size, size);
+        Vector2 scaleVector = new Vector3(size, size);
         fish.transform.localScale = scaleVector;
     }
 
