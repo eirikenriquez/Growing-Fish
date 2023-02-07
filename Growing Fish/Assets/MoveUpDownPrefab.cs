@@ -5,23 +5,25 @@ using UnityEngine;
 public class MoveUpDownPrefab : MonoBehaviour
 {
     public GameObject prefab;
-    public GameObject boxColliderObject;
     private BoxCollider2D boxCollider;
     private Bounds bounds;
     public int numberOfBombs;
     public int maxBombs;
     private List<GameObject> existingBombs = new List<GameObject>();
     //public float spawnRadius = 5f;
-
+    public PlayerInfo playerInfo;
+    public int minDistance;
 
     void Start()
     {
+        /*
         if (boxColliderObject == null)
         {
             Debug.LogError("boxColliderObject is not assigned");
             return;
         }
-        boxCollider = boxColliderObject.GetComponent<BoxCollider2D>();
+        */
+        boxCollider = gameObject.GetComponent<BoxCollider2D>();
         if (boxCollider == null)
         {
             Debug.LogError("boxColliderObject does not have a BoxCollider2D component");
@@ -35,13 +37,21 @@ public class MoveUpDownPrefab : MonoBehaviour
 
         while (numberOfBombs < maxBombs)
         {
-            Vector3 randomPosition = new Vector3(
-                Random.Range(boxCollider.bounds.min.x, boxCollider.bounds.max.x),
-                Random.Range(boxCollider.bounds.min.y, boxCollider.bounds.max.y),
-                0
-            );
-            randomPosition.x += Random.Range(-0.5f, 0.5f);
-            randomPosition.y += Random.Range(-0.5f, 0.5f);
+            Vector3 randomPosition;
+
+            do
+            {
+                randomPosition = new Vector3(
+                    Random.Range(boxCollider.bounds.min.x, boxCollider.bounds.max.x),
+                    Random.Range(boxCollider.bounds.min.y, boxCollider.bounds.max.y),
+                    0
+                );
+
+                randomPosition.x += Random.Range(-0.5f, 0.5f);
+                randomPosition.y += Random.Range(-0.5f, 0.5f);
+            }
+            while (Vector3.Distance(randomPosition, playerInfo.transform.localPosition) < minDistance);
+
             GameObject instantiatedBomb = Instantiate(prefab, randomPosition, Quaternion.identity);
             existingBombs.Add(instantiatedBomb);
             numberOfBombs++;
