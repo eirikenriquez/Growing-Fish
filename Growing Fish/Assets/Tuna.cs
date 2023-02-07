@@ -11,9 +11,4 @@ public class Tuna : Fish
         base.Start();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
