@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EatScript : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class EatScript : MonoBehaviour
     public Rigidbody2D rb;
     public AudioSource eatSound;
     public float knockbackMultiplier; // used to calculate knockback damage
+    public TMPro.TextMeshProUGUI feedbackText; //for eating feedback
+    public float feedbackDuration = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +36,7 @@ public class EatScript : MonoBehaviour
             if (CanEat(fishInstance))
             {
                 Debug.Log("eat");
+                //get it's position
                 Eat(fishInstance, collision);
             } 
             else
@@ -58,7 +62,15 @@ public class EatScript : MonoBehaviour
         fish.Eaten();
         Grow(fish.Size);
         //collision.gameObject.GetComponent<Fish>().Eaten();
+
+        feedbackText.text = "+1";
+        feedbackText.enabled = true;
+        //feedbackText.transform.position = position;
+        Invoke("HideFeedbackText", feedbackDuration);
+
     }
+
+
 
     private void Grow(float amount)
     {
@@ -71,5 +83,10 @@ public class EatScript : MonoBehaviour
         float yForce = -playerMovement.MoveDirection.y * knockbackMultiplier;
 
         rb.AddForce(new Vector2(xForce, yForce));
+    }
+
+    void HideFeedbackText()
+    {
+        feedbackText.enabled = false;
     }
 }
