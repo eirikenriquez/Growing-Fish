@@ -15,8 +15,8 @@ public class MainMenuBG : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        Vector2 mousePositionX = new Vector2(Input.mousePosition.x, 0);
+        Vector2 mousePosition = GameObject.Find("Main Camera").GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePositionX = new Vector2(mousePosition.x, 0);
         Debug.Log(mousePositionX);
         gameObject.transform.position = Vector2.MoveTowards(transform.position, mousePositionX, Vector2.Distance(mousePositionX, transform.position) * bgSpeed * Time.deltaTime);
     }
