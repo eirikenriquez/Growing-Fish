@@ -500,8 +500,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 150159711}
-  score: 0
-  timeInterval: 0.1
 --- !u!1 &211405140
 GameObject:
   m_ObjectHideFlags: 0
@@ -3428,6 +3426,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7514012008324896912, guid: 7bcde371f02149746ab056dfacab61f8, type: 3}
+      propertyPath: timeInterval
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514012008324896912, guid: 7bcde371f02149746ab056dfacab61f8, type: 3}
+      propertyPath: timePointsPerInterval
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7514012008324896914, guid: 7bcde371f02149746ab056dfacab61f8, type: 3}
       propertyPath: fishSpawn
       value: 
@@ -3436,10 +3442,6 @@ PrefabInstance:
       propertyPath: feedbackText
       value: 
       objectReference: {fileID: 675305046}
-    - target: {fileID: 7514012008324896914, guid: 7bcde371f02149746ab056dfacab61f8, type: 3}
-      propertyPath: feedbackDuration
-      value: 0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 7514012008324896918, guid: 7bcde371f02149746ab056dfacab61f8, type: 3}
       propertyPath: m_RootOrder
       value: 2

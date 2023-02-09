@@ -7,7 +7,7 @@ public class Score : MonoBehaviour
 {
 
     public TMP_Text scoreText;
-    public int score = 0;
+    /*public int score = 0;
     public float timeInterval = 1.0f;
 
     // Start is called before the first frame update
@@ -22,14 +22,19 @@ public class Score : MonoBehaviour
     {
         score += points;
         UpdateScoreText();
+    }*/
+
+    private void Update()
+    {
+        UpdateScoreText();
     }
 
     private void UpdateScoreText()
     {
-        scoreText.text = string.Format("{0:000000}", score);
+        scoreText.text = string.Format("{0:000000}", PlayerInfo.score);
     }
 
-    IEnumerator AutoIncreaseScore()
+    /*IEnumerator AutoIncreaseScore()
     {
         while (true)
         {

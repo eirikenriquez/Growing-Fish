@@ -57,7 +57,7 @@ public class EatScript : MonoBehaviour
 
     private void Eat(Fish fish, Collision2D collision)
     {
-        playerInfo.AddPoints(fish.Size);
+        playerInfo.AddScore(fish.Size);
         eatSound.Play();
         fish.Eaten();
         Grow(fish.Size);

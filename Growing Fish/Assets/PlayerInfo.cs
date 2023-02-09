@@ -6,10 +6,11 @@ public class PlayerInfo : MonoBehaviour
 {
     public float pointsMultiplier;
     public float damageMultiplier;
-    public float timeMultiplier;
+    public float timePointsPerInterval;
+    public float timeInterval;
     public float growMultiplier;
     public int health;
-    public float score;
+    public static float score;
     public float size;
     public SpriteRenderer playerSprite;
 
@@ -19,27 +20,33 @@ public class PlayerInfo : MonoBehaviour
         size = playerSprite.bounds.size.x;
         score = 0;
         health = 100;
+        StartCoroutine(AutoIncreaseScore());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator AutoIncreaseScore()
     {
-        AddTimePoints();
+        while (true)
+        {
+            yield return new WaitForSeconds(timeInterval);
+            score += timePointsPerInterval;
+        }
     }
 
-    public void AddTimePoints()
-    {
-        score += Time.deltaTime * timeMultiplier;
-    }
-
-    public void AddPoints(float points)
+    public void AddScore(float points)
     {
         score += points * pointsMultiplier;
     }
 
     public void TakeDamage(float damage)
     {
-        health -= (int)(damage * damageMultiplier);
+        if (health - (int)(damage * damageMultiplier) <= 0) 
+        {
+            GetComponent<PlayerDeath>().GoToDeadScreen();
+        }
+        else
+        {
+            health -= (int)(damage * damageMultiplier);
+        }
     }
 
     public void IncreaseSize(float amount)

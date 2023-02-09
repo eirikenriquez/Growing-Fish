@@ -165,6 +165,8 @@ MonoBehaviour:
   rb: {fileID: 7514012008324896916}
   eatSound: {fileID: 7514012008324896943}
   knockbackMultiplier: 50
+  feedbackText: {fileID: 0}
+  feedbackDuration: 0.8
 --- !u!114 &7514012008324896912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +184,6 @@ MonoBehaviour:
   timeMultiplier: 10
   growMultiplier: 0.1
   health: 0
-  score: 0
   size: 0
   playerSprite: {fileID: 7514012008324896921}
 --- !u!70 &7514012008324896913
@@ -213,7 +214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbda3a9e0c6b59848b810df23c9b9a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7514012008324896920}
 --- !u!82 &7514012008324896943
 AudioSource:
   m_ObjectHideFlags: 0
