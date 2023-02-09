@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuController : MonoBehaviour
+public class MenuController : MonoBehaviour
 {
     public Animator animator;
     
@@ -20,5 +20,10 @@ public class MainMenuController : MonoBehaviour
     public void goToMainScene()
     {
         SceneManager.LoadScene("Main");
+    }
+
+    public void goToMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 }
