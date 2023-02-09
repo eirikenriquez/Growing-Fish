@@ -28,13 +28,20 @@ public abstract class Fish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckPosition();
+        CheckDistanceFromPlayer();
+        CheckPosition();
+    }
+
+    private void CheckDistanceFromPlayer()
+    {
         if (Vector2.Distance(gameObject.transform.position, player.transform.position) <= maxDistanceToAct)
         {
             ChaseOrRun();
         }
     }
 
-    void FixedUpdate()
+    private void CheckPosition()
     {
         CurrentPosition = transform.position;
 

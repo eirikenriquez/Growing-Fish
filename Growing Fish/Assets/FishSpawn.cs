@@ -6,6 +6,7 @@ public class FishSpawn : MonoBehaviour
 {
     public Bounds spawnBoundaries;
     public Vector2 FishPosition { get; private set; }
+    public Vector2 FishScale;
     public int minDistance;
     //public int maxDistance;
     public float minFishSize;
@@ -55,11 +56,12 @@ public class FishSpawn : MonoBehaviour
         {
             GenerateSize();
         }
-        while (existingSizes.Contains(fish.transform.localScale.x)) ;
+        while (existingSizes.Contains(FishScale.x));
 
-        existingSizes.Add(fish.transform.localScale.x);
+        existingSizes.Add(FishScale.x);
 
         GameObject fishInstance = Instantiate(fish, FishPosition, Quaternion.identity);
+        fishInstance.gameObject.transform.localScale = FishScale;
         existingFish.Add(fishInstance);
 
         fishCount++;
@@ -69,15 +71,13 @@ public class FishSpawn : MonoBehaviour
     {
         float x = Random.Range(spawnBoundaries.min.x, spawnBoundaries.max.x);
         float y = Random.Range(spawnBoundaries.min.y, spawnBoundaries.max.y);
-
         FishPosition = new Vector2(x, y);
     }
 
     private void GenerateSize()
     {
         float size = Random.Range(minFishSize, maxFishSize);
-        Vector2 scaleVector = new Vector3(size, size);
-        fish.transform.localScale = scaleVector;
+        FishScale = new Vector2(size, size);
     }
 
     // Checks if fish is in boundary and removes them if not in bounds
