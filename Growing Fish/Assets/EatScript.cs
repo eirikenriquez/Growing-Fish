@@ -65,7 +65,7 @@ public class EatScript : MonoBehaviour
 
         feedbackText.text = "+1";
         feedbackText.enabled = true;
-        //feedbackText.transform.position = position;
+        feedbackText.transform.position = GameObject.Find("Main Camera").GetComponent<Camera>().WorldToScreenPoint(fish.CurrentPosition);
         Invoke("HideFeedbackText", feedbackDuration);
 
     }
