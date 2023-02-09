@@ -5,13 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    public Animator animator;
-    
-    public void Fade()
-    {
-        animator.SetTrigger("trigger");
-    }
-
     public void ExitGame()
     {
         Application.Quit();
