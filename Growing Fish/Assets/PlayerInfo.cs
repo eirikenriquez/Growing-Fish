@@ -6,11 +6,11 @@ public class PlayerInfo : MonoBehaviour
 {
     public float pointsMultiplier;
     public float damageMultiplier;
-    public float timePointsPerInterval;
+    public int timePointsPerInterval;
     public float timeInterval;
     public float growMultiplier;
     public int health;
-    public static float score;
+    public static int score;
     public float size;
     public SpriteRenderer playerSprite;
 
@@ -34,7 +34,7 @@ public class PlayerInfo : MonoBehaviour
 
     public void AddScore(float points)
     {
-        score += points * pointsMultiplier;
+        score += (int) (points * pointsMultiplier);
     }
 
     public void TakeDamage(float damage)
