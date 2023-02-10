@@ -1,22 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class Health : MonoBehaviour
 {
-    public TMP_Text healthText;
-    public PlayerInfo playerInfo;
+    private TMP_Text healthText;
+    private PlayerInfo playerInfo;
+    private Image red;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetReferences();
+    }
+
+    private void GetReferences()
+    {
+        healthText = GameObject.Find("Health Text").GetComponent<TMP_Text>();
+        playerInfo = GameObject.Find("Player").GetComponent<PlayerInfo>();
+        red = GameObject.Find("Red").GetComponent<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthText.text = "Health: " + playerInfo.health;
+        red.fillAmount = (float)playerInfo.health / 100;
+        healthText.text = "" + playerInfo.health;
     }
 }
