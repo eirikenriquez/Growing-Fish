@@ -14,6 +14,7 @@ public class PlayerInfo : MonoBehaviour
     public float size;
     public SpriteRenderer playerSprite;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +47,17 @@ public class PlayerInfo : MonoBehaviour
         else
         {
             health -= (int)(damage * damageMultiplier);
+            //using coroutine to change color when shark is hit.
+            StartCoroutine(FlashRed());
         }
+    }
+    //method for changing color.
+    IEnumerator FlashRed()
+    {
+        Color originalColor = playerSprite.color;
+        playerSprite.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        playerSprite.color = originalColor;
     }
 
     public void IncreaseSize(float amount)
