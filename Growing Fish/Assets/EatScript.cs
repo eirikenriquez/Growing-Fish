@@ -42,8 +42,7 @@ public class EatScript : MonoBehaviour
             else
             {
                 Debug.Log("too big :(");
-                Hurt(collision);
-                playerInfo.TakeDamage(fishInstance.Size);
+                Hurt(fishInstance, collision);
             }
         }
     }
@@ -63,25 +62,42 @@ public class EatScript : MonoBehaviour
         Grow(fish.Size);
         //collision.gameObject.GetComponent<Fish>().Eaten();
 
-        feedbackText.text = "+" + playerInfo.CalculateEarnedPoints(fish.Size);
+        DisplayFeedback(fish, false);
+    }
+
+    // bool hurt - true if player takes damage, false if player earns points
+    private void DisplayFeedback(Fish fish, bool hurt)
+    {
+        if (!hurt)
+        {
+            feedbackText.text = "+" + playerInfo.CalculateEarnedPoints(fish.Size);
+        } 
+        else
+        {
+            feedbackText.text = "-" + playerInfo.CalculateDamageTaken(fish.Size);
+        }
+
         feedbackText.enabled = true;
         feedbackText.transform.position = GameObject.Find("Main Camera").GetComponent<Camera>().WorldToScreenPoint(fish.CurrentPosition);
         Invoke("HideFeedbackText", feedbackDuration);
     }
-
-
 
     private void Grow(float amount)
     {
         playerInfo.IncreaseSize(amount);
     }
 
-    private void Hurt(Collision2D collision)
+    private void Hurt(Fish fish, Collision2D collision)
     {
+        // knockback
         float xForce = -playerMovement.MoveDirection.x * knockbackMultiplier;
         float yForce = -playerMovement.MoveDirection.y * knockbackMultiplier;
-
         rb.AddForce(new Vector2(xForce, yForce));
+
+        // minus health
+        playerInfo.TakeDamage(fish.Size);
+
+        DisplayFeedback(fish, true);
     }
 
     void HideFeedbackText()

@@ -46,17 +46,23 @@ public class PlayerInfo : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (health - (int)(damage * damageMultiplier) <= 0) 
+        if (health - CalculateDamageTaken(damage) <= 0)
         {
             GetComponent<PlayerDeath>().GoToDeadScreen();
         }
         else
         {
-            health -= (int)(damage * damageMultiplier);
+            health -= CalculateDamageTaken(damage);
             //using coroutine to change color when shark is hit.
             StartCoroutine(FlashRed());
         }
     }
+
+    public int CalculateDamageTaken(float damage)
+    {
+        return (int)(damage * damageMultiplier);
+    }
+
     //method for changing color.
     IEnumerator FlashRed()
     {
