@@ -63,11 +63,10 @@ public class EatScript : MonoBehaviour
         Grow(fish.Size);
         //collision.gameObject.GetComponent<Fish>().Eaten();
 
-        feedbackText.text = "+1";
+        feedbackText.text = "+" + playerInfo.CalculateEarnedPoints(fish.Size);
         feedbackText.enabled = true;
         feedbackText.transform.position = GameObject.Find("Main Camera").GetComponent<Camera>().WorldToScreenPoint(fish.CurrentPosition);
         Invoke("HideFeedbackText", feedbackDuration);
-
     }
 
 

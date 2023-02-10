@@ -19,7 +19,6 @@ public class Health : MonoBehaviour
 
     private void GetReferences()
     {
-        healthText = GameObject.Find("Health Text").GetComponent<TMP_Text>();
         playerInfo = GameObject.Find("Player").GetComponent<PlayerInfo>();
         red = GameObject.Find("Red").GetComponent<Image>();
     }
@@ -28,6 +27,5 @@ public class Health : MonoBehaviour
     void Update()
     {
         red.fillAmount = (float)playerInfo.health / 100;
-        healthText.text = "" + playerInfo.health;
     }
 }

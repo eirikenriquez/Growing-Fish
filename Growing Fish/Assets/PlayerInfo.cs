@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerInfo : MonoBehaviour
 {
+    public const int POINTSTIMESTEN = 10; // needed for point multiplier
     public float pointsMultiplier;
     public float damageMultiplier;
     public int timePointsPerInterval;
@@ -35,7 +36,12 @@ public class PlayerInfo : MonoBehaviour
 
     public void AddScore(float points)
     {
-        score += (int) (points * pointsMultiplier);
+        score += CalculateEarnedPoints(points);
+    }
+
+    public int CalculateEarnedPoints(float points)
+    {
+        return (int)(points * pointsMultiplier) * POINTSTIMESTEN;
     }
 
     public void TakeDamage(float damage)
