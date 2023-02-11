@@ -10,21 +10,10 @@ public class EatScript : MonoBehaviour
     public PlayerMovement playerMovement;
     public Rigidbody2D rb;
     public AudioSource eatSound;
+    public AudioSource hurtSound;
     public float knockbackMultiplier; // used to calculate knockback damage
     public TMPro.TextMeshProUGUI feedbackText; //for eating feedback
     public float feedbackDuration = 2f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -105,6 +94,7 @@ public class EatScript : MonoBehaviour
         playerInfo.TakeDamage(fish.Size);
 
         DisplayFeedback(fish, true);
+        hurtSound.Play();
     }
 
     void HideFeedbackText()
