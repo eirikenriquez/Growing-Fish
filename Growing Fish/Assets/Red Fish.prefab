@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7017076280492231969}
   - component: {fileID: 7017076280492231970}
   - component: {fileID: 7017076280492231971}
+  - component: {fileID: -2836082885509521763}
   m_Layer: 0
   m_Name: Red Fish
   m_TagString: Fish
@@ -120,8 +121,8 @@ MonoBehaviour:
   sprite: {fileID: 0}
   fishSpawn: {fileID: 0}
   player: {fileID: 0}
-  maxDistanceToAct: 1
-  speed: 1
+  maxDistanceToAct: 2
+  speed: 0.8
 --- !u!50 &7017076280492231971
 Rigidbody2D:
   serializedVersion: 4
@@ -143,3 +144,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &-2836082885509521763
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7017076280492231973}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eaeb41aa49fbb054ab0e39abc6af26e8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
