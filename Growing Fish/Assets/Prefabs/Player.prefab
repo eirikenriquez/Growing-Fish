@@ -290,7 +290,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.94, y: -1.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8383664208075832977}
   - {fileID: 7120281717605236857}
@@ -439,13 +439,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointsMultiplier: 100
   damageMultiplier: 25
-  healthIncreaseMultiplier: 0
+  healthIncreaseMultiplier: 50
   timePointsPerInterval: 10
   timeInterval: 0.1
   growMultiplier: 0.1
   maxHealth: 100
   health: 0
   size: 0
+  maxSize: 5
   playerSprite: {fileID: 7514012008324896921}
 --- !u!70 &7514012008324896913
 CapsuleCollider2D:

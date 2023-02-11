@@ -16,6 +16,7 @@ public class PlayerInfo : MonoBehaviour
     public int health;
     public static int score;
     public float size;
+    public float maxSize;
     public SpriteRenderer playerSprite;
 
 
@@ -95,7 +96,20 @@ public class PlayerInfo : MonoBehaviour
 
     public void IncreaseSize(float amount)
     {
-        gameObject.transform.localScale *= (amount * growMultiplier / size) + 1;
-        size = playerSprite.bounds.size.x;
+        if (CalculateSize(amount) <= maxSize) 
+        {
+            gameObject.transform.localScale *= CalculateSize(amount);
+            size = playerSprite.bounds.size.x;
+        }
+        else
+        {
+            gameObject.transform.localScale = new Vector2(maxSize, maxSize);
+            size = maxSize;
+        }
+    }
+
+    private float CalculateSize(float amount)
+    {
+        return (amount * growMultiplier / size) + 1;
     }
 }
