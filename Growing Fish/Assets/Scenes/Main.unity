@@ -2594,7 +2594,7 @@ MonoBehaviour:
   FishScale: {x: 0, y: 0}
   minDistance: 10
   minFishSize: 0.2
-  maxFishSize: 1
+  maxFishSize: 2
   fishCount: 0
   maxFishes: 25
   fish: {fileID: 1903098892680251231, guid: 8eaaf624dca5b5048b86d2a2a6d8a809, type: 3}
