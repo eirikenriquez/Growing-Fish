@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,19 +11,21 @@ public class PlayerMovement : MonoBehaviour
     private float inputY;
     public Rigidbody2D rb;
     public Vector2 MoveDirection { get; private set; }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        GetInputs();
-        SetMoveDirection();
-        FlipSprite();
+        if (!Dead())
+        {
+            GetInputs();
+            SetMoveDirection();
+            FlipSprite();
+        }
+    }
+
+    private bool Dead()
+    {
+        return GetComponent<PlayerDeath>().dead;
     }
 
     // For physics updates

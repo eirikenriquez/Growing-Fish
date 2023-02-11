@@ -181,7 +181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointsMultiplier: 100
   damageMultiplier: 25
-  timeMultiplier: 10
+  timePointsPerInterval: 10
+  timeInterval: 0.1
   growMultiplier: 0.1
   health: 0
   size: 0
@@ -214,6 +215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbda3a9e0c6b59848b810df23c9b9a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallSpeed: 0.5
+  timeToWait: 3
+  dead: 0
 --- !u!82 &7514012008324896943
 AudioSource:
   m_ObjectHideFlags: 0

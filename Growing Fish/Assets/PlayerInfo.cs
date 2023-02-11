@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInfo : MonoBehaviour
 {
-    public const int POINTSTIMESTEN = 10; // needed for point multiplier
+    public const int POINTS_TIMES_10 = 10; // needed for point multiplier
     public float pointsMultiplier;
     public float damageMultiplier;
     public int timePointsPerInterval;
@@ -41,14 +41,14 @@ public class PlayerInfo : MonoBehaviour
 
     public int CalculateEarnedPoints(float points)
     {
-        return (int)(points * pointsMultiplier) * POINTSTIMESTEN;
+        return (int)(points * pointsMultiplier) * POINTS_TIMES_10;
     }
 
     public void TakeDamage(float damage)
     {
         if (health - CalculateDamageTaken(damage) <= 0)
         {
-            GetComponent<PlayerDeath>().GoToDeadScreen();
+            GetComponent<PlayerDeath>().Dead();
         }
         else
         {
