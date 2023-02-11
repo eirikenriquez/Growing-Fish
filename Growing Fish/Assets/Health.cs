@@ -26,6 +26,6 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        red.fillAmount = (float)playerInfo.health / 100;
+        red.fillAmount = (float)playerInfo.health / playerInfo.maxHealth;
     }
 }
