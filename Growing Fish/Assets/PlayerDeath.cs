@@ -19,23 +19,22 @@ public class PlayerDeath : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bomb")
         {
+            GetComponent<PlayerInfo>().health = 0;
             Dead();
         }
     }
 
     public void Dead()
     {
+        dead = true;
+        GetComponent<SpriteRenderer>().color = Color.red;
         StartCoroutine(SinkToGround());
-        SceneManager.LoadScene("Dead Scene");
     }
 
     private IEnumerator SinkToGround()
     {
         GetComponent<Rigidbody2D>().gravityScale = fallSpeed;
-
-        while (true)
-        {    
-            yield return new WaitForSeconds(timeToWait);
-        }
+        yield return new WaitForSeconds(timeToWait);
+        SceneManager.LoadScene("Dead Scene");
     }
 }

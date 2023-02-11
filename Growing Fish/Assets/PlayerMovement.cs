@@ -20,6 +20,10 @@ public class PlayerMovement : MonoBehaviour
             GetInputs();
             SetMoveDirection();
             FlipSprite();
+        } 
+        else
+        {
+            MoveDirection = Vector2.zero;
         }
     }
 
