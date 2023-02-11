@@ -17,6 +17,7 @@ public class PlayerInfo : MonoBehaviour
     public static int score;
     public float size;
     public float maxSize;
+    public int fishEaten;
     public SpriteRenderer playerSprite;
 
 
@@ -26,6 +27,7 @@ public class PlayerInfo : MonoBehaviour
         size = playerSprite.bounds.size.x;
         score = 0;
         health = maxHealth;
+        fishEaten = 0;
         StartCoroutine(AutoIncreaseScore());
     }
 

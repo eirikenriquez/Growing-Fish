@@ -7,7 +7,6 @@ using System;
 
 public class Health : MonoBehaviour
 {
-    private TMP_Text healthText;
     private PlayerInfo playerInfo;
     private Image red;
 
