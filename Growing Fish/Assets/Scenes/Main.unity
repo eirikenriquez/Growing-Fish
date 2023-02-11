@@ -1106,6 +1106,7 @@ Transform:
   - {fileID: 20703812}
   - {fileID: 1651316724}
   - {fileID: 1942965440}
+  - {fileID: 824775546}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1578,6 +1579,89 @@ Transform:
   m_Father: {fileID: 1173588055}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &824775545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 824775546}
+  - component: {fileID: 824775548}
+  - component: {fileID: 824775547}
+  m_Layer: 0
+  m_Name: RedFishSpawn
+  m_TagString: FishSpawner
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &824775546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824775545}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.14, y: 1.36, z: 10}
+  m_LocalScale: {x: 1.6654687, y: 0.4722047, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &824775547
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824775545}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -1.8739724}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 23.080425, y: 19.105621}
+  m_EdgeRadius: 0
+--- !u!114 &824775548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824775545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b770dd29c7b20e4d8ce6ed82b7b880f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnBoundaries:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  FishScale: {x: 0, y: 0}
+  minDistance: 10
+  minFishSize: 0.2
+  maxFishSize: 0.5
+  fishCount: 0
+  maxFishes: 3
+  fish: {fileID: 7017076280492231973, guid: e19f522bc0156bd4ea0fa341d434cd98, type: 3}
+  background: {fileID: 824775547}
+  playerInfo: {fileID: 1174725598}
 --- !u!1 &825945915
 GameObject:
   m_ObjectHideFlags: 0
@@ -3488,6 +3572,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7514012008324896912, guid: 7bcde371f02149746ab056dfacab61f8, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7514012008324896914, guid: 7bcde371f02149746ab056dfacab61f8, type: 3}
       propertyPath: fishSpawn
       value: 

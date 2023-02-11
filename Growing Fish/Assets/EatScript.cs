@@ -29,7 +29,7 @@ public class EatScript : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         // check if player collided with fish
-        if (collision.gameObject.tag == "Fish")
+        if (collision.gameObject.CompareTag("Fish"))
         {
             Fish fishInstance = (Fish)collision.gameObject.GetComponent("Fish");
 
@@ -61,6 +61,11 @@ public class EatScript : MonoBehaviour
         fish.Eaten();
         Grow(fish.Size);
         //collision.gameObject.GetComponent<Fish>().Eaten();
+
+        if (fish.redFish)
+        {
+            playerInfo.IncreaseHealth(fish.Size);
+        }
 
         DisplayFeedback(fish, false);
     }

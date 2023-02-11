@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,11 @@ public class PlayerInfo : MonoBehaviour
     public const int POINTS_TIMES_10 = 10; // needed for point multiplier
     public float pointsMultiplier;
     public float damageMultiplier;
+    public float healthIncreaseMultiplier;
     public int timePointsPerInterval;
     public float timeInterval;
     public float growMultiplier;
+    public int maxHealth;
     public int health;
     public static int score;
     public float size;
@@ -21,7 +24,7 @@ public class PlayerInfo : MonoBehaviour
     {
         size = playerSprite.bounds.size.x;
         score = 0;
-        health = 100;
+        health = maxHealth;
         StartCoroutine(AutoIncreaseScore());
     }
 
@@ -48,6 +51,7 @@ public class PlayerInfo : MonoBehaviour
     {
         if (health - CalculateDamageTaken(damage) <= 0)
         {
+            health = 0;
             GetComponent<PlayerDeath>().Dead();
         }
         else
@@ -70,6 +74,23 @@ public class PlayerInfo : MonoBehaviour
         playerSprite.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         playerSprite.color = originalColor;
+    }
+
+    public void IncreaseHealth(float size)
+    {
+        if (health + CalculateHealthIncrease(size) < maxHealth)
+        {
+            health += CalculateHealthIncrease(size);
+        }
+        else
+        {
+            health = maxHealth;
+        }
+    }
+
+    private int CalculateHealthIncrease(float size)
+    {
+        return (int)(size * healthIncreaseMultiplier);
     }
 
     public void IncreaseSize(float amount)

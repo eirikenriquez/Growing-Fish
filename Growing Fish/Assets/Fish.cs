@@ -6,7 +6,8 @@ using UnityEngine;
 public abstract class Fish : MonoBehaviour
 {
     // Fish properties
-    public Boolean facingRight;
+    public bool redFish;
+    public bool facingRight;
     public float Size { get; private set; }
     public SpriteRenderer sprite;
     public FishSpawn fishSpawn;
