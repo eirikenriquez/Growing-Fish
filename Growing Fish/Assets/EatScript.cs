@@ -71,10 +71,12 @@ public class EatScript : MonoBehaviour
         if (!hurt)
         {
             feedbackText.text = "+" + playerInfo.CalculateEarnedPoints(fish.Size);
+            feedbackText.color = new Color(248, 193, 0);
         } 
         else
         {
             feedbackText.text = "-" + playerInfo.CalculateDamageTaken(fish.Size);
+            feedbackText.color = Color.red;
         }
 
         feedbackText.enabled = true;
