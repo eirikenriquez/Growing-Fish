@@ -10,13 +10,18 @@ public class MenuController : MonoBehaviour
         Application.Quit();
     }
 
-    public void goToMainScene()
+    public void GoToMainScene()
     {
         SceneManager.LoadScene("Main");
     }
 
-    public void goToMainMenu()
+    public void GoToMainMenu()
     {
         SceneManager.LoadScene("Main Menu");
+    }
+
+    public void GoToHelpScene()
+    {
+        SceneManager.LoadScene("Help Scene");
     }
 }
