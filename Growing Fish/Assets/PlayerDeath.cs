@@ -28,6 +28,7 @@ public class PlayerDeath : MonoBehaviour
     {
         dead = true;
         GetComponent<SpriteRenderer>().color = Color.red;
+        GetComponent<Animator>().SetBool("dead", dead);
         StartCoroutine(SinkToGround());
     }
 
