@@ -1459,6 +1459,7 @@ GameObject:
   - component: {fileID: 1871541135}
   - component: {fileID: 1871541137}
   - component: {fileID: 1871541138}
+  - component: {fileID: 1871541139}
   m_Layer: 5
   m_Name: Help Button
   m_TagString: Untagged
@@ -1475,7 +1476,7 @@ RectTransform:
   m_GameObject: {fileID: 1871541133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.79671, y: 0.79671, z: 0.79671}
+  m_LocalScale: {x: 1.1189824, y: 1.1189824, z: 1.1189824}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1639754076}
@@ -1483,8 +1484,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -61, y: -74}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -67.640015, y: -74.100006}
+  m_SizeDelta: {x: 116.66, y: 101.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1871541135
 MonoBehaviour:
@@ -1506,7 +1507,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 20f4aa4c94063ef42803edb6a1933584, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db68a86d2b5441d4b92a02e2faec0acd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1543,7 +1544,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 3
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1609,6 +1610,26 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!95 &1871541139
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871541133}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbdb0303997ee4941a1ed873c87aaf32, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &2039783635
 GameObject:
   m_ObjectHideFlags: 0
