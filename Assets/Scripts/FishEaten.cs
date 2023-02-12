@@ -17,7 +17,7 @@ public class FishEaten : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fishEatenText.text = string.Format("{0:000000}", playerInfo.fishEaten);
+        fishEatenText.text = string.Format("{0:0}", playerInfo.fishEaten);
     }
 
     private void GetReferences()

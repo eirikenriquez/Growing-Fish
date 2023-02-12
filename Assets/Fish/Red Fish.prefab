@@ -118,11 +118,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redFish: 0
   facingRight: 0
+  moving: 0
   sprite: {fileID: 0}
   fishSpawn: {fileID: 0}
   player: {fileID: 0}
   maxDistanceToAct: 2
   speed: 0.8
+  lastPosition: {x: 0, y: 0}
+  randomPosition: {x: 0, y: 0}
 --- !u!50 &7017076280492231971
 Rigidbody2D:
   serializedVersion: 4
@@ -140,7 +143,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4

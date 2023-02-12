@@ -18,6 +18,13 @@ public abstract class Fish : MonoBehaviour
     public Vector2 CurrentPosition { get; private set; }
     public Vector2 lastPosition;
     public Vector2 randomPosition;
+    private float flipDelay = 0.5f; // The delay between each sprite flip in seconds
+    private float lastFlipTime = 0f; // The time of the last sprite flip
+    //private float flipWaitTime = 0.5f;
+    //private float currentWaitTime = 0.0f;
+    private bool canFlip = true;
+    private float flipTimer = 0f;
+
 
     // Start is called before the first frame update
     protected void Start()
@@ -34,6 +41,13 @@ public abstract class Fish : MonoBehaviour
         CheckPosition();
         CheckDistanceFromPlayer();
         CheckPosition();
+
+        // Only flip the sprite if enough time has passed since the last flip
+        if (Time.time - lastFlipTime >= flipDelay)
+        {
+            FlipSprite();
+            lastFlipTime = Time.time;
+        }
     }
 
     private void CheckDistanceFromPlayer()
@@ -57,7 +71,7 @@ public abstract class Fish : MonoBehaviour
     {
         if (CurrentPosition != randomPosition)
         {
-            gameObject.transform.position = Vector2.MoveTowards(transform.position, randomPosition, speed*Time.deltaTime);
+            gameObject.transform.position = Vector2.MoveTowards(transform.position, randomPosition, speed * Time.deltaTime);
         }
         else
         {
@@ -72,14 +86,21 @@ public abstract class Fish : MonoBehaviour
         randomPosition = new Vector2(randomX, randomY);
     }
 
+    private IEnumerator WaitBeforeFlipping()
+    {
+        canFlip = false;
+        yield return new WaitForSeconds(0.5f);
+        canFlip = true;
+    }
+
     private void CheckPosition()
     {
         CurrentPosition = transform.position;
 
         if (CurrentPosition != lastPosition)
         {
+            
             UpdateDirection();
-            FlipSprite();
             moving = true;
         }
         else
@@ -87,20 +108,41 @@ public abstract class Fish : MonoBehaviour
             moving = false;
         }
 
+        // Only flip the sprite if the fish is actually moving
+        if (moving)
+        {
+            flipTimer += Time.deltaTime;
+            if (flipTimer >= flipDelay)
+            {
+                FlipSprite();
+                flipTimer = 0f;
+            }
+        }
+        else
+        {
+            flipTimer = 0f;
+        }
+
         lastPosition = CurrentPosition;
     }
+
 
     private void UpdateDirection()
     {
         currentDirection = (CurrentPosition - lastPosition).normalized;
     }
 
-    public void FlipSprite()
+ 
+
+
+    private void FlipSprite()
     {
+        // Only flip the sprite if the direction of movement has changed
         if ((currentDirection.x < 0 && facingRight) || (currentDirection.x > 0 && !facingRight))
         {
             gameObject.transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
             facingRight = !facingRight;
+            StartCoroutine(WaitBeforeFlipping());
         }
     }
 
