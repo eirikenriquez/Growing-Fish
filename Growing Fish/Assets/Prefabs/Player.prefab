@@ -338,7 +338,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 489554898, guid: dc61140d38bc74a47a38ae48aede3d27, type: 3}
+  m_Sprite: {fileID: -1802322655, guid: 3985095ec691503499a6a7419b9e073a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -447,6 +447,7 @@ MonoBehaviour:
   health: 0
   size: 0
   maxSize: 5
+  fishEaten: 0
   playerSprite: {fileID: 7514012008324896921}
 --- !u!70 &7514012008324896913
 CapsuleCollider2D:
