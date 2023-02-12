@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +7,7 @@ public abstract class Fish : MonoBehaviour
     // Fish properties
     public bool redFish;
     public bool facingRight;
+    public bool moving;
     public float Size { get; private set; }
     public SpriteRenderer sprite;
     public FishSpawn fishSpawn;
@@ -16,7 +16,8 @@ public abstract class Fish : MonoBehaviour
     public float speed;
     private Vector2 currentDirection;
     public Vector2 CurrentPosition { get; private set; }
-    private Vector2 lastPosition;
+    public Vector2 lastPosition;
+    public Vector2 randomPosition;
 
     // Start is called before the first frame update
     protected void Start()
@@ -24,10 +25,11 @@ public abstract class Fish : MonoBehaviour
         sprite = gameObject.GetComponent<SpriteRenderer>();
         Size = sprite.bounds.size.x;
         player = GameObject.Find("Player");
+        GenerateRandomPosition();
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         CheckPosition();
         CheckDistanceFromPlayer();
@@ -36,10 +38,38 @@ public abstract class Fish : MonoBehaviour
 
     private void CheckDistanceFromPlayer()
     {
-        if (Vector2.Distance(gameObject.transform.position, player.transform.position) <= maxDistanceToAct)
+        if (DistanceFromPlayer() <= maxDistanceToAct)
         {
             ChaseOrRun();
         }
+        else
+        {
+            MoveRandomly();
+        }
+    }
+
+    private float DistanceFromPlayer()
+    {
+        return Vector2.Distance(gameObject.transform.position, player.transform.position);
+    }
+
+    private void MoveRandomly()
+    {
+        if (CurrentPosition != randomPosition)
+        {
+            gameObject.transform.position = Vector2.MoveTowards(transform.position, randomPosition, speed*Time.deltaTime);
+        }
+        else
+        {
+            GenerateRandomPosition();
+        }
+    }
+
+    private void GenerateRandomPosition()
+    {
+        float randomX = Random.Range(-(gameObject.transform.position.x * 2), gameObject.transform.position.x * 2);
+        float randomY = Random.Range(-(gameObject.transform.position.y * 2), gameObject.transform.position.y * 2);
+        randomPosition = new Vector2(randomX, randomY);
     }
 
     private void CheckPosition()
@@ -50,6 +80,11 @@ public abstract class Fish : MonoBehaviour
         {
             UpdateDirection();
             FlipSprite();
+            moving = true;
+        }
+        else
+        {
+            moving = false;
         }
 
         lastPosition = CurrentPosition;

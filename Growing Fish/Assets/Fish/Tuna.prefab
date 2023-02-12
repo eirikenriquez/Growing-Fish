@@ -157,9 +157,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ae3f8398c84114380ecb47397ffcc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redFish: 0
   facingRight: 0
+  moving: 0
   sprite: {fileID: 0}
   fishSpawn: {fileID: 0}
   player: {fileID: 0}
   maxDistanceToAct: 4
   speed: 0.75
+  lastPosition: {x: 0, y: 0}
+  randomPosition: {x: 0, y: 0}
