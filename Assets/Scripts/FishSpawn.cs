@@ -8,14 +8,18 @@ public class FishSpawn : MonoBehaviour
     public Vector2 FishPosition { get; private set; }
     public Vector2 FishScale;
     public int minDistance;
-    //public int maxDistance;
     public float minFishSize;
     public float maxFishSize;
     public int fishCount;
     public int maxFishes;
+    public float difficultyIncreaseRate;
     public GameObject fish;
     public BoxCollider2D background;
     public PlayerInfo playerInfo;
+    public float spawnDistance;
+    public float distanceDecreaseRate;
+    private float distanceTraveled;
+    private Vector3 lastPlayerPosition;
     private List<float> existingSizes;
     private List<GameObject> existingFish;
 
@@ -24,6 +28,7 @@ public class FishSpawn : MonoBehaviour
     {
         existingSizes = new List<float>();
         existingFish = new List<GameObject>();
+        lastPlayerPosition = playerInfo.transform.position;
     }
 
     // Update is called once per frame
@@ -31,12 +36,23 @@ public class FishSpawn : MonoBehaviour
     {
         CalculateSpawnBoundaries();
 
-        if (fishCount < maxFishes)
+        distanceTraveled += Vector3.Distance(playerInfo.transform.position, lastPlayerPosition);
+        lastPlayerPosition = playerInfo.transform.position;
+
+        if (fishCount < maxFishes && distanceTraveled >= spawnDistance)
         {
             SpawnAFish();
+            distanceTraveled = 0;
         }
 
+        AdjustSpawnDistance();
+        IncreaseDifficulty();
         ResetFishPosition();
+    }
+
+    private void AdjustSpawnDistance()
+    {
+        spawnDistance = Mathf.Max(0, spawnDistance - Time.deltaTime * distanceDecreaseRate);
     }
 
     private void CalculateSpawnBoundaries()
@@ -80,6 +96,11 @@ public class FishSpawn : MonoBehaviour
         FishScale = new Vector2(size, size);
     }
 
+    private void IncreaseDifficulty()
+    {
+        maxFishes = Mathf.FloorToInt(maxFishes + Time.deltaTime * difficultyIncreaseRate);
+    }
+
     // Checks if fish is in boundary and removes them if not in bounds
     private void ResetFishPosition()
     {
@@ -102,4 +123,3 @@ public class FishSpawn : MonoBehaviour
         fishCount--;
     }
 }
-
