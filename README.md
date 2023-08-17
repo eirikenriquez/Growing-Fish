@@ -19,7 +19,3 @@ This game was crafted by **Bawk n' Bite**, a dedicated team consisting of Zack L
 - [Hardmoon_-_Void.mp3](https://opengameart.org/content/void)
 - [424911-impactshort78.wav](https://opengameart.org/content/short-impact)
 - Music from [Mixkit](https://mixkit.co/free-stock-music/tag/videogame/): "Kidding Around" by Ahjay Stelino
-
----
-
-**Note:** The content above is a generated GitHub README file based on the information you provided. Make sure to replace placeholders like `game_thumbnail.png` with the actual path to your game's thumbnail image and ensure that all links are accurate. Additionally, feel free to format and style the README to align with your preferences.
